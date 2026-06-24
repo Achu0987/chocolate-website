@@ -1,5 +1,9 @@
 'use client';
 
+import Image from 'next/image';
+import ourStory1Img from '../../public/our_story_1.png';
+import ourStory2Img from '../../public/our_story_2.png';
+
 export default function OurStory() {
   return (
     <section className="relative z-30 py-32 bg-[#3A2618] text-white overflow-hidden">
@@ -19,8 +23,8 @@ export default function OurStory() {
           <div className="relative h-[600px] w-full group">
             {/* Background Image */}
             <div className="absolute top-0 left-0 w-3/4 h-[80%] rounded-sm overflow-hidden shadow-2xl z-10">
-              <img
-                src="/our_story_1.png"
+              <Image
+                src={ourStory1Img}
                 alt="Pouring Chocolate"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
               />
@@ -28,8 +32,8 @@ export default function OurStory() {
 
             {/* Foreground Image */}
             <div className="absolute bottom-0 right-0 w-2/3 h-[60%] rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-30 border-4 border-[#3A2618]">
-              <img
-                src="/our_story_2.png"
+              <Image
+                src={ourStory2Img}
                 alt="Gold Leaf Chocolate"
                 className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-1000 ease-out"
               />

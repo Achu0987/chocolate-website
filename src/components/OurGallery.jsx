@@ -1,12 +1,19 @@
 'use client';
 
+import Image from 'next/image';
+import ourStory1Img from '../../public/our_story_1.png';
+import deliciousChocolateImg from '../../public/delicious_chocolate.png';
+import mixChocolatesImg from '../../public/mix_chocolates.png';
+import chocoNutsImg from '../../public/choco_nuts.png';
+import softCakeImg from '../../public/soft_cake.png';
+
 export default function OurGallery() {
   const images = [
-    { id: 1, src: '/our_story_1.png', span: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2' },
-    { id: 2, src: '/delicious_chocolate.png', span: 'col-span-1 row-span-1' },
-    { id: 3, src: '/mix_chocolates.png', span: 'col-span-1 row-span-1' },
-    { id: 4, src: '/choco_nuts.png', span: 'col-span-1 row-span-1' },
-    { id: 5, src: '/soft_cake.png', span: 'col-span-1 row-span-1' },
+    { id: 1, src: ourStory1Img, span: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2' },
+    { id: 2, src: deliciousChocolateImg, span: 'col-span-1 row-span-1' },
+    { id: 3, src: mixChocolatesImg, span: 'col-span-1 row-span-1' },
+    { id: 4, src: chocoNutsImg, span: 'col-span-1 row-span-1' },
+    { id: 5, src: softCakeImg, span: 'col-span-1 row-span-1' },
   ];
 
   return (
@@ -27,7 +34,7 @@ export default function OurGallery() {
               key={img.id} 
               className={`relative group overflow-hidden cursor-pointer ${img.span} rounded-sm shadow-xl`}
             >
-              <img 
+              <Image 
                 src={img.src} 
                 alt="Gallery Item" 
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"

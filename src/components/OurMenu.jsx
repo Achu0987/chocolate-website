@@ -2,13 +2,19 @@
 
 import { useState } from 'react';
 
+import Image from 'next/image';
+import deliciousChocolateImg from '../../public/delicious_chocolate.png';
+import softCakeImg from '../../public/soft_cake.png';
+import mixChocolatesImg from '../../public/mix_chocolates.png';
+import chocoNutsImg from '../../public/choco_nuts.png';
+
 const menuItems = [
-  { id: 1, name: "Dark Chocolate Tart", desc: "A rich, gooey dark chocolate filling in a crisp shell.", price: "₹ 850", category: "Cakes & Pies", img: "/delicious_chocolate.png" },
-  { id: 2, name: "Raspberry Chocolate Cake", desc: "Three layers of chocolate sponge with raspberry coulis.", price: "₹ 1,200", category: "Cakes & Pies", img: "/soft_cake.png" },
-  { id: 3, name: "Classic Fudge Brownie", desc: "Warm fudge brownie served with vanilla bean ice cream.", price: "₹ 450", category: "Other Sweets", img: "/mix_chocolates.png" },
-  { id: 4, name: "Pecan Caramel Pie", desc: "Toasted pecans and gooey caramel in a buttery crust.", price: "₹ 950", category: "Cakes & Pies", img: "/choco_nuts.png" },
-  { id: 5, name: "Chocolate Macarons", desc: "Delicate French macarons filled with dark chocolate ganache.", price: "₹ 600", category: "Other Sweets", img: "/delicious_chocolate.png" },
-  { id: 6, name: "Hazelnut Eclair", desc: "Choux pastry filled with creamy hazelnut praline.", price: "₹ 550", category: "Other Sweets", img: "/choco_nuts.png" },
+  { id: 1, name: "Dark Chocolate Tart", desc: "A rich, gooey dark chocolate filling in a crisp shell.", price: "₹ 850", category: "Cakes & Pies", img: deliciousChocolateImg },
+  { id: 2, name: "Raspberry Chocolate Cake", desc: "Three layers of chocolate sponge with raspberry coulis.", price: "₹ 1,200", category: "Cakes & Pies", img: softCakeImg },
+  { id: 3, name: "Classic Fudge Brownie", desc: "Warm fudge brownie served with vanilla bean ice cream.", price: "₹ 450", category: "Other Sweets", img: mixChocolatesImg },
+  { id: 4, name: "Pecan Caramel Pie", desc: "Toasted pecans and gooey caramel in a buttery crust.", price: "₹ 950", category: "Cakes & Pies", img: chocoNutsImg },
+  { id: 5, name: "Chocolate Macarons", desc: "Delicate French macarons filled with dark chocolate ganache.", price: "₹ 600", category: "Other Sweets", img: deliciousChocolateImg },
+  { id: 6, name: "Hazelnut Eclair", desc: "Choux pastry filled with creamy hazelnut praline.", price: "₹ 550", category: "Other Sweets", img: chocoNutsImg },
 ];
 
 const categories = ["All", "Cakes & Pies", "Other Sweets"];
@@ -54,7 +60,7 @@ export default function OurMenu() {
 
               {/* Image with hover reveal */}
               <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 shrink-0 overflow-hidden rounded-full border-2 border-transparent group-hover:border-[#D4AF37]/50 transition-colors duration-500">
-                <img
+                <Image
                   src={item.img}
                   alt={item.name}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"

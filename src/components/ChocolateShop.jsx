@@ -1,6 +1,11 @@
 'use client';
 
 import { Users, Bell, Globe } from 'lucide-react';
+import Image from 'next/image';
+import deliciousChocolateImg from '../../public/delicious_chocolate.png';
+import mixChocolatesImg from '../../public/mix_chocolates.png';
+import chocoNutsImg from '../../public/choco_nuts.png';
+import softCakeImg from '../../public/soft_cake.png';
 
 export default function ChocolateShop() {
   const products = [
@@ -8,25 +13,25 @@ export default function ChocolateShop() {
       id: 1,
       name: 'DELICIOUS CHOCOLATE',
       price: '₹ 1,900.00',
-      image: '/delicious_chocolate.png',
+      image: deliciousChocolateImg,
     },
     {
       id: 2,
       name: 'MIX OF CHOCOLATES',
       price: '₹ 2,600.00',
-      image: '/mix_chocolates.png',
+      image: mixChocolatesImg,
     },
     {
       id: 3,
       name: 'CHOCO NUTS',
       price: '₹ 1,600.00',
-      image: '/choco_nuts.png',
+      image: chocoNutsImg,
     },
     {
       id: 4,
       name: 'SOFT CAKE',
       price: '₹ 1,200.00',
-      image: '/soft_cake.png',
+      image: softCakeImg,
     },
   ];
 
@@ -60,7 +65,7 @@ export default function ChocolateShop() {
               className="bg-white flex flex-col group cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out"
             >
               <div className="relative h-64 overflow-hidden">
-                <img 
+                <Image 
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
